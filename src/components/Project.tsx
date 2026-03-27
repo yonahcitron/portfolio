@@ -111,7 +111,7 @@ function Project() {
 
   return (
     <div className="body-container" id="projects">
-      <h1>Professional Projects</h1>
+      <h1>Projects</h1>
       <div className="projects-list">
         {projects.map((project, index) => (
           <div
