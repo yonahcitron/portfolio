@@ -34,21 +34,52 @@ p, a, ul, h3, h4, h5, label, button {
   background-color: #0d1116;
 }
 
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .body-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
-  padding: 5% 10%;
+  padding: 48px 56px;
   justify-content: center;
-  text-align: left;
+  margin: 16px auto;
+  width: calc(100% - 32px);
+  max-width: 1072px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 @media screen {
   @media (max-width: 768px) {
       .body-container {
           align-items: flex-start;
+          padding: 32px 24px;
+          margin: 10px auto;
+          border-radius: 10px;
       }
   }
+}
+
+// ── Per-section tints (dark mode) ──────────────────────────────────
+.body-container#expertise {
+  max-width: 1072px;
+  border-color: rgba(80, 0, 202, 0.22);
+  background-color: rgba(80, 0, 202, 0.042);
+}
+.body-container#history {
+  max-width: 980px;
+  border-color: rgba(0, 196, 180, 0.2);
+  background-color: rgba(0, 196, 180, 0.03);
+}
+.body-container#projects {
+  max-width: 912px;
+  border-color: rgba(26, 108, 245, 0.2);
+  background-color: rgba(26, 108, 245, 0.038);
 }
 
 a {
@@ -113,6 +144,23 @@ ul {
 
 .light-mode {
   background-color: #f8f9fa;
+
+  .body-container {
+    border-color: rgba(0, 0, 0, 0.09);
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .body-container#expertise {
+    border-color: rgba(80, 0, 202, 0.15);
+    background-color: rgba(80, 0, 202, 0.03);
+  }
+  .body-container#history {
+    border-color: rgba(0, 196, 180, 0.22);
+    background-color: rgba(0, 196, 180, 0.04);
+  }
+  .body-container#projects {
+    border-color: rgba(26, 108, 245, 0.18);
+    background-color: rgba(26, 108, 245, 0.04);
+  }
 
   .navigation-bar {
     background-color: #f8f9fa;

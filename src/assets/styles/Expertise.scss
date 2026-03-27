@@ -1,19 +1,28 @@
 .skills-grid {
-  display: flex;
-  /* Instead of 1fr columns, let them size themselves based on content (up to 400px if you have that max-width). */
-  /* or use auto if you prefer: repeat(3, auto) */
-  grid-gap: 60px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  width: 100%;
+  max-width: 960px;
 
   .skill {
-    /* You can still have a max-width on each skill if you want them to top out at 400px */
-    max-width: 400px;  
-    text-align: left;   // or center, depending on your preference
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
     .skill-icons {
       display: flex;
       gap: 1rem;
       height: 4em;
       align-items: center;
+      justify-content: center;
       img {
         width: 3em;
         height: 3em;
@@ -27,9 +36,14 @@
   }
 }
 
-/* OpenAI logo is black and white, so invert it in light mode */
+/* Black logos: invert in dark mode so they're visible */
 .dark-mode #openai_logo {
     filter: invert(1) !important;
+}
+
+/* KLEE/LLVM logos: white fill in dark mode, dark fill in light mode */
+#llvm_logo, #klee_logo {
+    /* already coloured via SVG fill, no filter needed */
 }
 
 /* TODO: Find out what this is for */
@@ -52,6 +66,10 @@
 .flex-chips {
     line-height: 2;
     margin: 0.5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     .chip-title {
         color: white;
@@ -74,22 +92,18 @@
 
 @media screen {
     @media (max-width: 768px) {
-        .body-container#expertise {
-            flex-direction: column;
-        }
-    
         .body-container#expertise .skills-grid {
-            display: initial;
+            grid-template-columns: 1fr;
         }
-        
+
         .body-container#expertise .skills-grid .skill {
             padding-bottom: 5%;
         }
     }
 
     @media (max-width: 567px) {
-        .body-container#expertise .skills {
-            font-size: 12px;
+        .body-container#expertise .skills-grid {
+            gap: 32px;
         }
     }
 }

@@ -1,41 +1,94 @@
+$teal: rgba(0, 196, 180, 1);
+$teal-muted: rgba(0, 196, 180, 0.75);
 
-.vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+// Strip library box-shadow from cards
+.vertical-timeline-element-content {
+  box-shadow: none !important;
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
+// Timeline vertical line
+.vertical-timeline::before {
+  background: rgba(0, 196, 180, 0.2) !important;
 }
 
-.vertical-timeline ul {
-    color: rgb(39, 40, 34);
+// Entry title
+.vertical-timeline-element-content h3 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  margin: 0 0 4px 0 !important;
+  letter-spacing: 0.01em !important;
 }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
+// Entry subtitle
+.vertical-timeline-element-content h4 {
+  font-family: "Lato", sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  color: $teal-muted !important;
+  margin: 0 0 10px 0 !important;
 }
 
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
+// Bullet lists
+.vertical-timeline-element-content ul {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-family: "Lato", sans-serif !important;
+  font-size: 0.87rem !important;
+  margin: 0 !important;
+  padding-left: 1.1rem !important;
+  li {
+    margin-bottom: 5px !important;
+    line-height: 1.5 !important;
+    &::marker { color: $teal-muted !important; }
+  }
 }
 
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
+// Date label (wide viewport — appears outside card)
+.vertical-timeline-element-date {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-family: "Lato", sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 400 !important;
+  padding: 0 32px !important;
 }
 
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
-}
-
-
-
+// Narrow viewport — date moves inside card
 @media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+  .vertical-timeline-element-date {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+// ── Light mode overrides ───────────────────────────────────────────
+.light-mode {
+  .vertical-timeline::before {
+    background: rgba(0, 196, 180, 0.28) !important;
+  }
+  .vertical-timeline-element-content {
+    background: rgba(0, 196, 180, 0.07) !important;
+    border-color: rgba(0, 196, 180, 0.25) !important;
+    box-shadow: none !important;
+  }
+  .vertical-timeline-element-content-arrow {
+    border-right-color: rgba(0, 196, 180, 0.25) !important;
+  }
+  .vertical-timeline-element-content h3 {
+    color: #0d1116 !important;
+  }
+  .vertical-timeline-element-content h4 {
+    color: rgba(0, 155, 143, 0.9) !important;
+  }
+  .vertical-timeline-element-content ul {
+    color: rgba(0, 0, 0, 0.68) !important;
+    li::marker { color: rgba(0, 155, 143, 0.8) !important; }
+  }
+  .vertical-timeline-element-date {
+    color: rgba(0, 0, 0, 0.4) !important;
+  }
+  @media screen and (max-width: 1170px) {
+    .vertical-timeline-element-date {
+      color: rgba(0, 0, 0, 0.4) !important;
     }
+  }
 }

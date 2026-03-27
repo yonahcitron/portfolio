@@ -17,7 +17,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects']];
+const cvUrl = `${process.env.PUBLIC_URL}/Yonah_Citron_CV.pdf`;
 
 function Navigation({parentToChild, modeChange}: any) {
 
@@ -69,6 +70,11 @@ function Navigation({parentToChild, modeChange}: any) {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton component="a" href={cvUrl} target="_blank" rel="noreferrer" sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Download CV" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -98,6 +104,28 @@ function Navigation({parentToChild, modeChange}: any) {
                 {item[0]}
               </Button>
             ))}
+            <Button
+              href={cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              sx={{
+                color: '#b085f5',
+                border: '1px solid rgba(80, 0, 202, 0.55)',
+                borderRadius: '20px',
+                ml: 1.5,
+                px: 2,
+                fontSize: '0.82rem',
+                textTransform: 'none',
+                letterSpacing: '0.02em',
+                '&:hover': {
+                  backgroundColor: 'rgba(80, 0, 202, 0.18)',
+                  borderColor: '#7a3fdb',
+                  color: '#d4b0ff',
+                }
+              }}
+            >
+              CV ↓
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

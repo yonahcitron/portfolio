@@ -1,70 +1,42 @@
 import React from "react";
-import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const skillsData = [
   {
     title: "Scalable Data Applications",
-    description: "I leverage full-stack expertise to create robust backends for data processing, and scalable frontends for data visualization and interaction. I enable powerful decision-making with large-scale data pipelines, utilizing modern technologies for data ingestion, transformation, and orchestration to drive actionable insights on structured and unstructured data, and deliver business value.",
+    description: "Four years building production data systems at enterprise scale. Full-stack applications, ETL and NLP batch pipelines, REST API backends, and interactive frontends — with hands-on experience across the whole stack from schema design and query optimisation to cloud deployment.",
     icons: [
       { id: "python_logo", src: `${process.env.PUBLIC_URL}/logos/py.svg`, alt: "Python Logo" },
       { id: "csharp_logo", src: `${process.env.PUBLIC_URL}/logos/cs.svg`, alt: "C# Logo" },
       { id: "javascript_logo", src: `${process.env.PUBLIC_URL}/logos/js.svg`, alt: "JavaScript Logo" }
     ],
-    techStack: [
-      "JavaScript",
-      "C#",
-      "Python",
-      "Pandas",
-      "SQL",
-      ".NET Core",
-      "REST APIs",
-      "Azure Data Factory",
-      "DataBricks",
-      "PostgreSQL",
-      "CosmosDB",
-      "Postman"
-    ]
   },
   {
-    title: "DevOps & Infra Automation",
-    description: "I incorporate cloud-native DevOps practices throughout the entire development lifecycle. I leverage infrastructure-as-code (IaC), CI/CD pipelines, and robust testing to ensure quick deployment from development to production. I leverage my expertise across the the software development life cycle to deliver comprehensive and reliable end-to-end solutions.",
+    title: "DevOps & Infrastructure Automation",
+    description: "Cloud-native from day one. IaC, CI/CD pipelines, containerisation, and automated testing across Azure and AWS. Strong preference for reproducible, parameterised deployments — and eliminating manual processes wherever possible.",
     icons: [
       { id: "azure_logo", src: `${process.env.PUBLIC_URL}/logos/az.svg`, alt: "Azure Logo" },
       { id: "bash_logo", src: `${process.env.PUBLIC_URL}/logos/sh.svg`, alt: "Bash Logo" },
       { id: "docker_logo", src: `${process.env.PUBLIC_URL}/logos/docker.svg`, alt: "Docker Logo" }
     ],
-    techStack: [
-      "Git",
-      "GitHub Actions",
-      "Docker",
-      "Azure",
-      "AWS",
-      "Bicep",
-      "Terraform",
-      "Linux",
-      "Bash",
-      "PowerShell Core"
-    ]
   },
   {
     title: "GenAI & LLMs",
-    description: "I integrate secure Large Language Models (LLMs) into applications to help clients unlock the power of AI for smarter decision-making. With experience building scalable GenAI solutions, I focus on automating workflows, enhancing data pipelines, and delivering intelligent features like insight generation and semantic search, all while ensuring secure and efficient deployment.",
+    description: "Practical LLM engineering: RAG pipelines, vector search, prompt frameworks, and open-source model hosting. Built production GenAI features at Shell earlier than most enterprise teams had internal LLM access — from llama.cpp on private infrastructure to AzureML-hosted deployments.",
     icons: [
       { id: "huggingface_logo", src: `${process.env.PUBLIC_URL}/logos/hf.svg`, alt: "HuggingFace Logo" },
       { id: "azureml_logo", src: `${process.env.PUBLIC_URL}/logos/azml.svg`, alt: "AzureML Logo" },
       { id: "openai_logo", src: `${process.env.PUBLIC_URL}/logos/openai.svg`, alt: "OpenAI Logo" }
     ],
-    techStack: [
-      "OpenAI API",
-      "Llama3",
-      "Llama-cpp",
-      "AzureML",
-      "HuggingFace",
-      "Python",
-      "ElasticSearch",
-      "MongoDB"
-    ]
+  },
+  {
+    title: "Systems & Compiler Infrastructure",
+    description: "Currently completing an intensive MSc at Imperial College, building deep expertise in systems programming and compiler infrastructure. Research project extends the KLEE symbolic execution engine — an open-source symbolic virtual machine built on LLVM — to support context-free syntactic parsing of complex input formats. Developing expertise in systems-level C++, compilers, interpreters, and the LLVM toolchain through a combination of coursework and independent research.",
+    icons: [
+      { id: "cpp_logo", src: `${process.env.PUBLIC_URL}/logos/cpp.svg`, alt: "C++ Logo" },
+      { id: "llvm_logo", src: `${process.env.PUBLIC_URL}/logos/llvm.svg`, alt: "LLVM Logo" },
+      { id: "klee_logo", src: `${process.env.PUBLIC_URL}/logos/klee.svg`, alt: "KLEE Logo" }
+    ],
   }
 ];
 
@@ -82,12 +54,6 @@ function Expertise() {
             </div>
             <h3>{skill.title}</h3>
             <p>{skill.description}</p>
-            <div className="flex-chips">
-              <span className="chip-title">Tech stack:</span>
-              {skill.techStack.map((label, idx) => (
-                <Chip key={idx} className='chip' label={label} />
-              ))}
-            </div>
           </div>
         ))}
       </div>
