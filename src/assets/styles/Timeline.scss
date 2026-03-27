@@ -1,15 +1,25 @@
 $teal: rgba(0, 196, 180, 1);
 $teal-muted: rgba(0, 196, 180, 0.75);
 
-// Strip library box-shadow and animation from cards
+// Strip library box-shadow from cards
 .vertical-timeline-element-content {
   box-shadow: none !important;
 }
 
-// Library animate=false still leaves visibility CSS; ensure cards are always shown
-.vertical-timeline-element {
-  visibility: visible !important;
-  opacity: 1 !important;
+// Override library bounce animations with a smooth opacity fade.
+// The default cd-bounce-2 / cd-bounce-2-inverse use translateX(±100px)
+// which causes scroll jank on mobile by temporarily extending layout width.
+@keyframes cd-bounce-1 {
+  0%   { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes cd-bounce-2 {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes cd-bounce-2-inverse {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 // Timeline vertical line
