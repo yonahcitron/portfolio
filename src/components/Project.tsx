@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faDatabase, faBolt, faRobot, faOilCan, faBrain } from '@fortawesome/free-solid-svg-icons';
@@ -104,6 +104,18 @@ const projects: ProjectType[] = [
 
 function Project() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add('revealed'); observer.unobserve(el); } },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -112,7 +124,7 @@ function Project() {
   return (
     <div className="body-container" id="projects">
       <h1>Projects</h1>
-      <div className="projects-list">
+      <div className="projects-list" ref={listRef}>
         {projects.map((project, index) => (
           <div
             className={`project-card ${expandedIndex === index ? "expanded" : ""}`}

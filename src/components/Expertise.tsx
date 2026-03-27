@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import '../assets/styles/Expertise.scss';
 
 const skillsData = [
@@ -41,10 +41,23 @@ const skillsData = [
 ];
 
 function Expertise() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add('revealed'); observer.unobserve(el); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="body-container" id="expertise">
       <h1>Expertise</h1>
-      <div className="skills-grid">
+      <div className="skills-grid" ref={gridRef}>
         {skillsData.map((skill, index) => (
           <div className="skill" key={index}>
             <div className="skill-icons">
