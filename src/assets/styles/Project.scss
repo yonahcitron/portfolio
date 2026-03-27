@@ -3,7 +3,7 @@ $accent: #5000ca;
 $accent-light: rgba(80, 0, 202, 0.15);
 $accent-border: rgba(80, 0, 202, 0.35);
 $accent-hover: rgba(80, 0, 202, 0.22);
-$accent-expanded: rgba(80, 0, 202, 0.18);
+$accent-expanded: rgba(80, 0, 202, 0.25);
 
 .projects-list {
   width: 100%;
@@ -50,8 +50,15 @@ $accent-expanded: rgba(80, 0, 202, 0.18);
   &.expanded {
     background-color: $accent-expanded;
     border-color: rgba(80, 0, 202, 0.6);
-    border-left-color: $accent;
+    border-left: 4px solid $accent;
     box-shadow: 0 2px 20px rgba(80, 0, 202, 0.22);
+
+    .project-domain-tag {
+      color: rgba(180, 130, 255, 1);
+    }
+    .project-domain-icon {
+      color: rgba(180, 130, 255, 0.9);
+    }
   }
 }
 
@@ -168,8 +175,9 @@ $accent-expanded: rgba(80, 0, 202, 0.18);
     }
 
     &.expanded {
-      background-color: rgba(80, 0, 202, 0.08);
-      border-color: rgba(80, 0, 202, 0.3);
+      background-color: rgba(80, 0, 202, 0.12);
+      border-color: rgba(80, 0, 202, 0.4);
+      border-left: 4px solid $accent;
     }
   }
 
