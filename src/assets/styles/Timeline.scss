@@ -6,20 +6,26 @@ $teal-muted: rgba(0, 196, 180, 0.75);
   box-shadow: none !important;
 }
 
-// Override library bounce animations with a smooth opacity fade.
+// Clip horizontal overflow so the slide-in translateX can't widen the page on mobile
+.vertical-timeline {
+  overflow: hidden;
+}
+
+// Override library bounce animations with a subtle side-slide + fade.
 // The default cd-bounce-2 / cd-bounce-2-inverse use translateX(±100px)
-// which causes scroll jank on mobile by temporarily extending layout width.
+// which causes scroll jank on mobile by extending layout width.
+// Using a small translateX + overflow:hidden above keeps the feel without jank.
 @keyframes cd-bounce-1 {
   0%   { opacity: 0; transform: scale(0.85); }
   100% { opacity: 1; transform: scale(1); }
 }
 @keyframes cd-bounce-2 {
-  0%   { opacity: 0; transform: translateY(16px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%   { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 @keyframes cd-bounce-2-inverse {
-  0%   { opacity: 0; transform: translateY(16px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%   { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 // Timeline vertical line
