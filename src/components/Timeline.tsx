@@ -10,7 +10,7 @@ function Timeline() {
   return (
       <div className="body-container" id="history">
         <h1>Timeline</h1>
-        <VerticalTimeline>
+        <VerticalTimeline animate={false}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'rgba(0, 196, 180, 0.07)', border: '1px solid rgba(0, 196, 180, 0.22)', borderRadius: '12px', boxShadow: 'none' }}

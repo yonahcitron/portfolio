@@ -1,4 +1,2 @@
-- remove the fork and redeploy this?
-- Set up the deployment with a git push rather than the current manual approach.
+
 - update the linkedin and github.. .
-- Also could you make sure the deployment to github pages or whatever is happening automatically.. if it's not already?? and then commit this all and just move it all to a new repo on my github with the cli... 'portfolio'

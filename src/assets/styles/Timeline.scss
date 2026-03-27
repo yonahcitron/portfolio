@@ -1,9 +1,15 @@
 $teal: rgba(0, 196, 180, 1);
 $teal-muted: rgba(0, 196, 180, 0.75);
 
-// Strip library box-shadow from cards
+// Strip library box-shadow and animation from cards
 .vertical-timeline-element-content {
   box-shadow: none !important;
+}
+
+// Library animate=false still leaves visibility CSS; ensure cards are always shown
+.vertical-timeline-element {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 // Timeline vertical line
