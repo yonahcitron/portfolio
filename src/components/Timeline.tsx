@@ -38,7 +38,7 @@ function Timeline() {
             <h3 className="vertical-timeline-element-title">Kubrick Group Training, UK</h3>
             <h4 className="vertical-timeline-element-subtitle">Employer-Sponsored Software Training</h4>
             <ul>
-              <li>Completed intensive 4-month training in enterprise software development</li>
+              <li>Completed intensive 4-month training in enterprise data engineering</li>
               <li>Topics included Python, SQL, PySpark, cloud technologies, and Agile practices</li>
             </ul>
           </VerticalTimelineElement>
