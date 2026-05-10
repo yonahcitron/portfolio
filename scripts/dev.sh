@@ -5,7 +5,7 @@ set -euo pipefail
 # Run this instead of `npm start` so the CV download works locally.
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-"$REPO_ROOT/scripts/build-cv.sh"
+"$REPO_ROOT/scripts/build-cv.sh" --public-only
 
 echo "==> Starting dev server..."
 cd "$REPO_ROOT"

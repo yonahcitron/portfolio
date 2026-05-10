@@ -19,15 +19,15 @@ Edit content under `src/components/` and the page hot-reloads. CV LaTeX source: 
 CI does the actual deploy on every push to `master` (`.github/workflows/deploy.yml` → GitHub Pages with the `yonahcitron.com` CNAME). It does **not** run xelatex, so you have to bake the CV PDF locally first:
 
 ```bash
-./scripts/build-cv.sh   # rebuilds public/Yonah_Citron_CV.pdf
+./scripts/build-cv.sh           # rebuilds BOTH public + private CVs
 git add public/Yonah_Citron_CV.pdf
-git commit -m "..."     # alongside whatever else changed
+git commit -m "..."             # alongside whatever else changed
 git push
 ```
 
-The PDF is committed to the repo; CI just copies whatever is in `public/` into the deployed bundle.
+Always run `build-cv.sh` (no flags) before a deploy — it regenerates both the public PDF in `public/` (committed; CI ships it) and the private PDF with phone injected in `cv/build/` plus a copy in `~/vault/files/documents/admin/cv/`. Phone is read from `pass` (`local/personal_info/mobile_number`).
 
-For recruiter PDFs of the CV with my phone number injected (read from `pass`), run `./scripts/build-private-cv.sh` — outputs to `cv/build/` and is **not** committed.
+`./scripts/build-cv.sh --public-only` skips the private step — used by `dev.sh` and useful on machines without `pass`.
 
 ## Credit
 
