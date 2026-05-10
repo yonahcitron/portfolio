@@ -36,7 +36,7 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faLaptop} />}
           >
             <h3 className="vertical-timeline-element-title">Kubrick Group Training, UK</h3>
-            <h4 className="vertical-timeline-element-subtitle">Software & Data Engineering Course</h4>
+            <h4 className="vertical-timeline-element-subtitle">Employer-Sponsored Software Training</h4>
             <ul>
               <li>Completed intensive 4-month training in enterprise software development</li>
               <li>Topics included Python, SQL, PySpark, cloud technologies, and Agile practices</li>
@@ -54,7 +54,7 @@ function Timeline() {
             <h4 className="vertical-timeline-element-subtitle">Software & Data Engineer</h4>
             <ul>
               <li>Contracted via Kubrick Group, then hired directly as Shell staff</li>
-              <li>Delivered six projects across four global business lines — Cyber Security, Lubricants, LNG, and Enterprise Knowledge Management</li>
+              <li>Delivered projects across four global business lines — Cyber Security, Lubricants, LNG, and Enterprise Knowledge Management</li>
               <li>Technical scope spanned batch ETL pipelines, NLP &amp; LLM orchestration, RAG &amp; vector search systems, and cloud-deployed full-stack data applications</li>
               <li>Worked end-to-end: system design, backend &amp; frontend development, cloud deployment, and senior stakeholder management</li>
             </ul>
@@ -72,7 +72,7 @@ function Timeline() {
             <ul>
               <li>Intensive year-long programme covering systems programming, algorithms, distributed systems, computer vision, and graphics</li>
               <li>Research project: extending the KLEE symbolic execution engine to support context-free parsing of complex input formats within the LLVM toolchain</li>
-              <li>Core coursework in C++; elective modules include Computer Vision, Graphics, and Networks & Distributed Systems</li>
+              <li>Core coursework in C++; electives: Advanced Computer Architecture, Networks & Distributed Systems, Computer Vision, Graphics, and Mathematics & Logic</li>
             </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
