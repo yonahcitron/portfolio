@@ -1,6 +1,9 @@
 %% yonah_citron_cv.tex
 %% Compile with: xelatex yonah_citron_cv.tex
 %% ---------------------------------------------------------------
+%% Single-page CV — public build (no phone) and private build
+%% (phone injected from `pass`) share this source.
+%% ---------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
 % ── Encoding & fonts ──────────────────────────────────────────────
@@ -14,33 +17,33 @@
   SmallCapsFeatures = {FakeSmallCaps},
   BoldFeatures   = {SmallCapsFont = * Bold, SmallCapsFeatures = {FakeSmallCaps}},
 ]
-\usepackage{microtype}                     % subtle typographic polish
-\linespread{0.92}                          % slightly tighter line spacing
+\usepackage{microtype}
+\linespread{0.88}
 
 % ── Page geometry ─────────────────────────────────────────────────
 \usepackage[
-  top=0.6in,
-  bottom=0.6in,
-  left=0.7in,
-  right=0.7in
+  top=0.5in,
+  bottom=0.5in,
+  left=0.65in,
+  right=0.65in
 ]{geometry}
 
 % ── Colours ───────────────────────────────────────────────────────
 \usepackage[dvipsnames]{xcolor}
-\definecolor{accent}{HTML}{1A3C5E}         % dark navy — understated
-\definecolor{lightbg}{HTML}{ECF0F5}        % subtle blue-grey for content boxes
+\definecolor{accent}{HTML}{1A3C5E}
+\definecolor{lightbg}{HTML}{ECF0F5}
 
 % ── Section formatting ────────────────────────────────────────────
 \usepackage{titlesec}
 
 \titleformat{\section}
-  {\large\bfseries\color{accent}\scshape}  % bold small-caps, navy
-  {}                                        % no numbering
-  {0pt}                                     % no indent
-  {}                                        % no prefix
+  {\large\bfseries\color{accent}\scshape}
+  {}
+  {0pt}
+  {}
   [\vspace{-11pt}\textcolor{accent}{\hrule height 0.5pt}]
 
-\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
 
 % ── Lists ─────────────────────────────────────────────────────────
 \usepackage{enumitem}
@@ -55,7 +58,7 @@
   before={\linespread{0.77}\selectfont}
 }
 
-% ── Hyperlinks (metadata only — no coloured boxes) ────────────────
+% ── Hyperlinks ────────────────────────────────────────────────────
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
   pdfauthor={Yonah Citron},
@@ -64,12 +67,12 @@
 
 % ── Misc ──────────────────────────────────────────────────────────
 \usepackage{tabularx}
-\usepackage{needspace}                     % prevent orphaned project headers
-\usepackage[most]{tcolorbox}               % subtle content boxes
-\pagestyle{empty}                          % no page numbers
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlength{\emergencystretch}{2em}         % ease line-breaking in narrow boxes
-\hbadness=3000                             % suppress minor underfull reports
+\setlength{\emergencystretch}{2em}
+\hbadness=3000
 
 % ── Content box style ─────────────────────────────────────────────
 \newtcolorbox{cvbox}{%
@@ -78,32 +81,22 @@
   colframe=lightbg,
   boxrule=0pt,
   arc=2pt,
-  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  left=8pt, right=8pt, top=4pt, bottom=4pt,
   boxsep=0pt,
-  before skip=3pt,
+  before skip=2pt,
   after skip=2pt,
   before upper={\setlength{\emergencystretch}{3em}},
 }
 
 % ── Helper commands ───────────────────────────────────────────────
-%  \entry{Date}{Title}{Detail lines…}
 \newcommand{\entry}[3]{%
   \textbf{#2}\hfill{\small\textit{#1}}%
   \par\vspace{0pt}%
   #3%
 }
 
-%  \project{Title}{One-liner}{Bullets}
-\newcommand{\project}[3]{%
-  \needspace{5\baselineskip}%              % don't orphan a project header
-  \vspace{2pt}%
-  \textbf{#1}\hspace{6pt}{\small\textit{#2}}\par\vspace{1pt}%
-  #3%
-}
-
-%  \subheading[optional note]{Title}
 \newcommand{\subheading}[2][]{%
-  \vspace{4pt}%
+  \vspace{3pt}%
   \hspace{8pt}{\small\textcolor{accent}{\textbf{#2}}\ifx&#1&\else\enspace\textit{#1}\fi}\par\vspace{0pt}%
 }
 
@@ -112,31 +105,28 @@
 
 % ── Header ────────────────────────────────────────────────────────
 \begin{center}
-  {\LARGE\bfseries\color{accent} Yonah Citron}\\[6pt]
-  {\small\textit{London\enspace\textcolor{accent}{·}\enspace Dual UK/US Work Authorisation%%PHONE%%}}\\[2pt]
+  {\LARGE\bfseries\color{accent} Yonah Citron}\\[4pt]
+  {\small London\enspace\textcolor{accent}{·}\enspace Dual UK/US Work Authorisation%%PHONE%%}\\[2pt]
   {\small \href{mailto:citronyonah@gmail.com}{citronyonah@gmail.com}\enspace\textcolor{accent}{·}\enspace\href{https://yonahcitron.com}{yonahcitron.com}\enspace\textcolor{accent}{·}\enspace\href{https://github.com/yonahcitron}{github.com/yonahcitron}}
 \end{center}
 
-\vspace{-2pt}
+\vspace{-4pt}
 
 % ── Summary ───────────────────────────────────────────────────────
 \section{Summary}
 
-3.5 years' experience in enterprise software using Python, C\#, Javascript, and SQL.
-Scoped and delivered multiple full-stack applications processing large quantities of data --- including ETL pipelines, batch NLP pipelines and agentic flows, API backends and web interface layers. Deployed solutions to cloud platforms using IaC and CI/CD best practices.
-Experienced in owning end-to-end project lifecycle and collaborating closely with senior stakeholders.
-Currently completing an intensive year-long MSc, focusing on systems programming, compiler infrastructure (LLVM), and formal verification.
-
+Cambridge linguistics graduate with 3.5 years of production software experience, now completing an MSc at Imperial College London focused on systems programming, compiler infrastructure (LLVM), and formal verification.
+Scoped and delivered data-intensive platforms, ETL and NLP pipelines, API backends, and web applications in Python, C\#, JavaScript, and SQL.
+Experienced in owning projects end-to-end and deploying to cloud using IaC and CI/CD.
 
 % ── Skills ────────────────────────────────────────────────────────
 \section{Skills}
 
 \textbf{Languages:} Python, C++, C\#, Bash, SQL, JavaScript.
-\textbf{Cloud \& Infra:} Azure, AWS; Bicep, Terraform, Kubernetes.
-\textbf{CI/CD \& Tooling:} Linux/UNIX terminal; GitHub Actions, Azure Pipelines.
-\textbf{Data:} Elasticsearch, PostgreSQL, MongoDB, Databricks.
-\textbf{AI/ML:} Azure Foundry, AzureML, Databricks Mosaic AI, Langchain/Langgraph.
-\textbf{Systems:} LLVM toolchain, KLEE (symbolic execution engine), compiler-based formal verification.
+\textbf{Systems:} LLVM toolchain, KLEE symbolic execution, OS internals, concurrency.
+\textbf{Data:} PostgreSQL, Elasticsearch, MongoDB, Databricks.
+\textbf{Cloud \& DevOps:} Azure, AWS; Bicep, Terraform, Kubernetes; GitHub Actions, Azure Pipelines.
+\textbf{AI/NLP:} LLM orchestration, RAG, vector search, Langchain/Langgraph.
 
 % ── Education ─────────────────────────────────────────────────────
 \section{Education}
@@ -144,31 +134,19 @@ Currently completing an intensive year-long MSc, focusing on systems programming
 \begin{cvbox}
 \entry{2025\,--\,2026}
   {MSc Computing\enspace\textcolor{accent}{·}\enspace Imperial College London \textnormal{\small\textit{expected Oct 2026}}}
-  {%
-  \subheading[6 months]{Taught Component}
-  \begin{itemize}
-    \item Elective modules: Advanced Computer Architecture; Networks \& Distributed Systems; Computer Vision; Graphics; Mathematics \& Logic
-    \item Core modules (taught in C++): Operating Systems \& Concurrency; Programming, Algorithms \& Data Structures; Software Engineering Group Projects
-  \end{itemize}
-  \subheading[6 months]{Research Component}
-  \begin{itemize}
-    \item Currently working on extending the KLEE engine to support context-free syntactic parsing of complex input formats (\textit{KLEE is an open-source symbolic virtual machine based on LLVM compiler infrastructure, used in industry for finding vulnerabilities in software})
-    \item Developing expertise in systems-level C++, compilers, interpreters, and the LLVM toolchain
+  {\begin{itemize}
+    \item Electives: Advanced Computer Architecture; Networks \& Distributed Systems; Computer Vision; Graphics; Mathematics \& Logic
+    \item Core (C++): Operating Systems \& Concurrency; Algorithms \& Data Structures; Software Engineering
+    \item Research: Extending the KLEE symbolic execution engine (LLVM-based) to support context-free parsing of complex input formats
   \end{itemize}}
-\end{cvbox}
-
-\begin{cvbox}
-\entry{2021\,--\,2022}
-  {Software \& Data Training\enspace\textcolor{accent}{·}\enspace Kubrick Group \textnormal{\small\textit{4 months, employer-sponsored}}}
-  {}
 \end{cvbox}
 
 \begin{cvbox}
 \entry{2017\,--\,2021}
   {MA, BA Linguistics\enspace\textcolor{accent}{·}\enspace University of Cambridge \textnormal{\small\textit{First Class Honours}}}
   {\begin{itemize}
-    \item Received the David Thompson Prize for outstanding academic performance in my final year
-    \item Wrote dissertation applying data-analytic techniques to a corpus grammar to explore the effects of syntactic frequency and collocation
+    \item David Thompson Prize for outstanding academic performance in final year
+    \item Dissertation applying data-analytic techniques to a Neo-Aramaic corpus grammar to explore the effects of syntactic frequency and collocation
   \end{itemize}}
 \end{cvbox}
 
@@ -177,65 +155,48 @@ Currently completing an intensive year-long MSc, focusing on systems programming
 
 \begin{cvbox}
 \entry{Jan 2022\,--\,Oct 2025}
-  {Shell \textnormal{\small\textit{as contractor for Kubrick Group, then permanent staff}}}
+  {Shell \textnormal{\small\textit{initially via Kubrick Group, then permanent}}}
   {%
-  \subheading{CyberSecOps Threat Intelligence Platform \& Console}
+  \subheading{Threat Intelligence Platform \& Console}
   \begin{itemize}
-    \item Scoped and developed a full-stack data integration platform for ingesting, normalising, and enhancing external threat intelligence feeds into a centralised data warehouse, with a secure front-end console for real-time search, classification, and triage of threats
-    \item Ingested data with batch ETL pipelines, consolidating diverse feeds into a consistent schema via a strongly-typed but flexible data interface
-    \item Deployed frontend leveraging enterprise-grade authentication and seamless integration with existing team workflows and platform
-    \item Included on-demand text augmentation pipelines triggered from the front-end - enabling near-instant translation \& summarisation
-    \item Implemented transparent auditing logs and data-state identification
-    \item Deployed all infrastructure and application code across staged environments using parameterised IaC and CI/CD pipelines, ensuring reliability and maintainability in production
+    \item Built full-stack platform ingesting, normalising, and enriching external threat feeds into a centralised data warehouse, with a web console for real-time search, classification, and triage
+    \item Designed strongly-typed data interface for consolidating diverse feed schemas; implemented on-demand NLP pipelines for translation and summarisation
+    \item Implemented transparent auditing logs and data-state tracking
+    \item Deployed infrastructure across staged environments using parameterised IaC and CI/CD
   \end{itemize}
-  \vspace{4pt}
-  \subheading{Enterprise SharePoint Document Processing Platform}
+  \subheading{Distributed Document Processing Platform}
   \begin{itemize}
-    \item Core maintainer and developer of a distributed .NET Core cloud platform processing millions of internal company documents
-    \item Oversaw architectural improvements to enable cron-job batch-processing
-    \item Introduced DevOps ways of working by implementing CI/CD pipelines to automate legacy deployment practices (previously done manually by the Ops team), transforming app reliability and traceability, as well as velocity of moving fixes and features to production
-    \item Improved audit trail and onboarding velocity by rigorously documenting microservice architecture in Visio
+    \item Core developer on a distributed .NET Core platform processing millions of internal documents; architected batch-processing improvements
+    \item Automated legacy manual deployments with CI/CD pipelines, improving reliability and deployment velocity
+    \item Documented microservice architecture to improve audit trail and onboarding speed
   \end{itemize}
-  \vspace{4pt}
-  \subheading{EV Charging Work Order Automation}
+  \subheading{EV Charging Data \& AI Systems}
   \begin{itemize}
-    \item Built an AI pipeline to extract, categorise, and normalise work order data from unstructured email content using LLMs, feeding a Databricks-backed data warehouse
-    \item Designed and maintained the data warehouse schema with versioned migrations (Alembic), ensuring data integrity across ingestion stages
-    \item Integrated with Shell's internal LLM client to orchestrate extraction and classification workflows at scale
+    \item Built LLM pipeline extracting and classifying work order data from unstructured emails into a Databricks warehouse with versioned schema migrations (Alembic)
+    \item Implemented Medallion architecture for document ingestion and serving; built vector search endpoints and RAG models registered via MLflow
+    \item Deployed continuous delivery pipeline with automated LLM evaluation to maintain answer quality over time
   \end{itemize}
-  \vspace{4pt}
-  \subheading{EV Charging AI Knowledge System}
+  \subheading{Competitive Intelligence Portal}
   \begin{itemize}
-    \item Implemented a full Medallion architecture (Bronze/Silver/Gold) on Databricks for document ingestion, transformation, and serving
-    \item Built vector search endpoints and registered models via MLflow for retrieval-augmented generation over internal documentation
-    \item Deployed a continuous delivery pipeline with automated LLM evaluation to maintain answer quality over time
+    \item Built data aggregation and search portal consolidating multiple external intelligence feeds, with NLP classification, semantic search, and summarisation
+    \item Optimised search and result-ranking in PostgreSQL using stored procedures; implemented semantic search over vector databases
+    \item Built back-end APIs in Express.js, orchestrating data batches with composable, Dockerised pipeline stages and CI/CD
+    \item Nominated for internal Shell award for exceptional contributions to project delivery
   \end{itemize}
-  \vspace{4pt}
-  \subheading{LLM Insight Generation Framework}
+  \subheading{LLM Tooling \& Legacy Modernisation}
   \begin{itemize}
-    \item Developed internal prompt framework (in early-stage LLM tooling landscape), allowing rapid augmentation and extraction of unstructured text within data warehouses into structured columns for downstream analysis
-    \item Consolidated a common intra-departmental utility, allowing analysts to focus on rapid prompt iterations for a variety of LLM PoCs (i.e. specify data source columns, output column, model parameters and prompt - and the framework handles the rest)
-    \item Backend experimented with open-source models securely on private cloud infrastructure using llama.cpp
-    \item Worked with individual teams on custom pre-processing pipelines, including a graph-based email deduplication algorithm to reduce token usage
-  \end{itemize}
-  \vspace{4pt}
-  \subheading{Lubricants Competitive Intelligence Portal}
-  \begin{itemize}
-    \item Built a data aggregation and search portal consolidating multiple external intelligence feeds, with NLP-powered classification, semantic search, and summarisation
-    \item Optimised search and result-ranking in PostgreSQL using stored procedures
-    \item Implemented domain-specific classification, tagging algorithms, and semantic search over vector databases
-    \item Built back-end APIs in Express.js, orchestrating data batches with Azure Data Factory
-    \item Implemented modular data pipeline stages on AzureML, composable as YAML files with Dockerised runtime environments and comprehensive CI/CD
-    \item Heavily involved in improving team's ways of working and refining project focus; nominated for internal Shell award for exceptional contributions to project delivery
-  \end{itemize}
-  \vspace{4pt}
-  \subheading{Legacy Knowledge Management Chatbot Upgrade \& Platform Migration}
-  \begin{itemize}
-    \item Modernised legacy knowledge management app, integrating useful functionality into the enterprise platform
-    \item Upgraded the app to use LLMs for semantic queries over a proprietary knowledge base (RAG), delivering human-readable answers
-    \item Built CI/CD pipeline, converting manual deployments to parameterised infrastructure-as-code (IaC)
-    \item Major refactor of code for maintainability, enhanced prompt design, and upgraded models for performance and reliability
+    \item Developed internal LLM framework for structured extraction from unstructured text across multiple teams; experimented with open-source models via llama.cpp on private infrastructure
+    \item Designed custom pre-processing pipelines, including a graph-based email deduplication algorithm to reduce token usage
+    \item Modernised legacy knowledge management app with RAG-based semantic queries and infrastructure-as-code deployments
   \end{itemize}}
 \end{cvbox}
+
+% ── Interests ─────────────────────────────────────────────────────
+\section{Interests}
+
+\textbf{Languages:} Conversational Russian and Hebrew; intermediate Arabic. Fond of Tolstoy and Russian-language literature.
+\textbf{Music:} Choral singer (two choirs).
+\textbf{Hardware:} Build electric guitars and custom mechanical keyboards.
+\textbf{Computing:} Perpetually refining my Doom Emacs config, Arch Linux desktop, and other dotfiles.
 
 \end{document}

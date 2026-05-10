@@ -1,86 +1,34 @@
-# Developer Portfolio Template 🚀
+# yonahcitron.com
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+My personal portfolio site — live at **[yonahcitron.com](https://yonahcitron.com)**.
 
-## What is this?
+A single-page React/TypeScript site covering my work history, projects, skills, and a downloadable CV (rebuilt from LaTeX locally before each deploy).
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+## Run locally
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+```bash
+./scripts/dev.sh
+```
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+Builds the public CV PDF into `public/`, then starts the CRA dev server at <http://localhost:3000>. Use this instead of plain `npm start` so the in-page CV download link works.
 
-![screenshot](./src/assets//images/screenshot.png)
+Edit content under `src/components/` and the page hot-reloads. CV LaTeX source: `cv/yonah_citron_cv.tex`.
 
-## Features
+## Deploy
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+CI does the actual deploy on every push to `master` (`.github/workflows/deploy.yml` → GitHub Pages with the `yonahcitron.com` CNAME). It does **not** run xelatex, so you have to bake the CV PDF locally first:
 
-## Quick Setup
+```bash
+./scripts/build-cv.sh   # rebuilds public/Yonah_Citron_CV.pdf
+git add public/Yonah_Citron_CV.pdf
+git commit -m "..."     # alongside whatever else changed
+git push
+```
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+The PDF is committed to the repo; CI just copies whatever is in `public/` into the deployed bundle.
 
-    ```bash
-    node -v
-    ```
+For recruiter PDFs of the CV with my phone number injected (read from `pass`), run `./scripts/build-private-cv.sh` — outputs to `cv/build/` and is **not** committed.
 
-2. In the project directory, install dependencies:
+## Credit
 
-    ```bash
-    npm install
-    ```
-
-3. Start the development server:
-
-    ```bash
-    npm start
-    ```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
-
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
-
-The page will reload if you make edits, and you will see any lint errors in the console.
-
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
-
-## Deployment
-
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
-
-1. **Set Up GitHub Repository**
-
-    Create a new repository on GitHub for your portfolio app.
-
-2. **Configure `package.json`**
-
-    Edit the following properties in your `package.json` file:
-
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
-
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
-
-3. **Deploy to GitHub Pages**
-
-    Run the following command to deploy your app:
-
-    ```bash
-    npm run deploy
-    ```
-
-4. **Access Your Deployed App**
-
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+Forked from [yujisatojr/react-portfolio-template](https://github.com/yujisatojr/react-portfolio-template) — the original layout/design template. Heavily customised since.
