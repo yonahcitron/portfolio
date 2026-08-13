@@ -5,7 +5,7 @@ set -euo pipefail
 #
 #   public  → public/Yonah_Citron_CV.pdf       (committed; CI ships it)
 #   private → cv/build/yonah_citron_cv.pdf     (gitignored, has phone)
-#           + ~/vault/files/documents/admin/cv/yonah_citron_cv.pdf  (mirror)
+#           + ~/vault/files/career/cv/yonah_citron_cv.pdf  (mirror)
 #
 # The two builds differ only by the %%PHONE%% placeholder: public strips
 # it; private substitutes the phone read from `pass`.
@@ -28,7 +28,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CV_DIR="$REPO_ROOT/cv"
 BUILD_DIR="$CV_DIR/build"
 PUBLIC_DIR="$REPO_ROOT/public"
-VAULT_CV_DIR="$HOME/vault/files/documents/admin/cv"
+VAULT_CV_DIR="$HOME/vault/files/career/cv"
 
 CV_TEX="yonah_citron_cv.tex"
 CV_PDF="yonah_citron_cv.pdf"

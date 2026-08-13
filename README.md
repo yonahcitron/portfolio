@@ -25,7 +25,7 @@ git commit -m "..."             # alongside whatever else changed
 git push
 ```
 
-Always run `build-cv.sh` (no flags) before a deploy — it regenerates both the public PDF in `public/` (committed; CI ships it) and the private PDF with phone injected in `cv/build/` plus a copy in `~/vault/files/documents/admin/cv/`. Phone is read from `pass` (`local/personal_info/mobile_number`).
+Always run `build-cv.sh` (no flags) before a deploy — it regenerates both the public PDF in `public/` (committed; CI ships it) and the private PDF with phone injected in `cv/build/` plus a copy in `~/vault/files/career/cv/`. Phone is read from `pass` (`local/personal_info/mobile_number`).
 
 `./scripts/build-cv.sh --public-only` skips the private step — used by `dev.sh` and useful on machines without `pass`.
 
