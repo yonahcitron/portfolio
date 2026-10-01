@@ -60,7 +60,7 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'rgba(0, 196, 180, 0.07)', border: '1px solid rgba(0, 196, 180, 0.22)', borderRadius: '12px', boxShadow: 'none' }}
             contentArrowStyle={{ borderRight: '7px solid rgba(0, 196, 180, 0.22)' }}
-            date="2025 - present"
+            date="2025 - 2026"
             iconClassName="timeline-logo-badge timeline-logo-badge--imperial"
             icon={<img className="timeline-logo timeline-logo--full" src={`${process.env.PUBLIC_URL}/logos/timeline/imperial.svg`} alt="Imperial College London logo" />}
           >
@@ -80,7 +80,7 @@ function Timeline() {
             icon={<img className="timeline-logo timeline-logo--full" src={`${process.env.PUBLIC_URL}/logos/timeline/prax.webp`} alt="Prax Industries logo" />}
           >
             <h3 className="vertical-timeline-element-title">Prax Industries</h3>
-            <h4 className="vertical-timeline-element-subtitle">Physical AI Systems</h4>
+            <h4 className="vertical-timeline-element-subtitle">Forward-Deploy Engineer</h4>
             <ul>
               <li>Joined Prax Industries to build and deploy AI systems for physical industries.</li>
               <li>Working on systems that combine AI agents, specialised models and sensor data with industrial software and equipment to help engineers optimise production and automate operational workflows.</li>
