@@ -30,8 +30,8 @@ const skillsData = [
     ],
   },
   {
-    title: "Systems & Compiler Infrastructure",
-    description: "Currently completing an intensive MSc at Imperial College, building deep expertise in systems programming and compiler infrastructure. Research project extends the KLEE symbolic execution engine — an open-source symbolic virtual machine built on LLVM — to support context-free syntactic parsing of complex input formats. Developing expertise in systems-level C++, compilers, interpreters, and the LLVM toolchain through a combination of coursework and independent research.",
+    title: "Systems Programming & Program Analysis",
+    description: "My MSc research at Imperial College London focused on automated test generation for complex parsers. I designed and built pSWIG, a system that constructs inputs incrementally using short symbolic windows to limit path explosion. It combines KLEE’s symbolic execution with native execution feedback and mechanisms for recovering useful keywords from parser implementations.",
     icons: [
       { id: "cpp_logo", src: `${process.env.PUBLIC_URL}/logos/cpp.svg`, alt: "C++ Logo" },
       { id: "llvm_logo", src: `${process.env.PUBLIC_URL}/logos/llvm.svg`, alt: "LLVM Logo" },

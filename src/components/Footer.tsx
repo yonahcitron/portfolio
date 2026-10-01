@@ -9,7 +9,7 @@ function Footer() {
     <footer>
       <div>
         <a href="https://github.com/yonahcitron" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-        <a href="https://www.linkedin.com/in/yonah-citron-b76705192/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+        <a href="https://www.linkedin.com/in/yonahcitron/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
         <a href="mailto:citronyonah@gmail.com"><EmailIcon/></a>
       </div>
       <p>Note: Demo pictures of company projects are excluded to respect intellectual property rights.</p>

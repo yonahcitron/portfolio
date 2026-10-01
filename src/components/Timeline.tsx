@@ -71,7 +71,7 @@ function Timeline() {
             <h4 className="vertical-timeline-element-subtitle">MSc Computing</h4>
             <ul>
               <li>Intensive year-long programme covering systems programming, algorithms, distributed systems, computer vision, and graphics</li>
-              <li>Research project: extending the KLEE symbolic execution engine to support context-free parsing of complex input formats within the LLVM toolchain</li>
+              <li>Dissertation: Effective Symbolic Execution of Parsers, supervised by Prof. Cristian Cadar. Designed and implemented pSWIG, an automated test-input generator combining incremental symbolic execution with coverage-guided and keyword-directed search.</li>
               <li>Core coursework in C++; electives: Advanced Computer Architecture, Networks & Distributed Systems, Computer Vision, Graphics, and Mathematics & Logic</li>
             </ul>
           </VerticalTimelineElement>
