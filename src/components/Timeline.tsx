@@ -30,7 +30,7 @@ function Timeline() {
             contentArrowStyle={{ borderRight: '7px solid rgba(0, 196, 180, 0.22)' }}
             date="2021 - 2022"
             iconClassName="timeline-logo-badge timeline-logo-badge--kubrick"
-            icon={<img className="timeline-logo timeline-logo--full" src={`${process.env.PUBLIC_URL}/logos/timeline/kubrick.png`} alt="Kubrick Group logo" />}
+            icon={<img className="timeline-logo timeline-logo--kubrick" src={`${process.env.PUBLIC_URL}/logos/timeline/kubrick.svg`} alt="Kubrick Group logo" />}
           >
             <h3 className="vertical-timeline-element-title">Kubrick Group Training, UK</h3>
             <h4 className="vertical-timeline-element-subtitle">Employer-Sponsored Software Training</h4>
