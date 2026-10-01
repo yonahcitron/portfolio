@@ -77,7 +77,7 @@ function Timeline() {
             contentArrowStyle={{ borderRight: '7px solid rgba(0, 196, 180, 0.22)' }}
             date="2026 - present"
             iconClassName="timeline-logo-badge"
-            icon={<img className="timeline-logo" src={`${process.env.PUBLIC_URL}/logos/timeline/prax.svg`} alt="Prax Industries logo" />}
+            icon={<img className="timeline-logo timeline-logo--full" src={`${process.env.PUBLIC_URL}/logos/timeline/prax.webp`} alt="Prax Industries logo" />}
           >
             <h3 className="vertical-timeline-element-title">Prax Industries</h3>
             <h4 className="vertical-timeline-element-subtitle">Physical AI Systems</h4>
