@@ -71,6 +71,21 @@ function Timeline() {
               <li>Dissertation: Effective Symbolic Execution of Parsers, supervised by Prof. Cristian Cadar. Designed and implemented pSWIG, an automated test-input generator combining incremental symbolic execution with coverage-guided and keyword-directed search.</li>
             </ul>
           </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'rgba(0, 196, 180, 0.07)', border: '1px solid rgba(0, 196, 180, 0.22)', borderRadius: '12px', boxShadow: 'none' }}
+            contentArrowStyle={{ borderRight: '7px solid rgba(0, 196, 180, 0.22)' }}
+            date="2026 - present"
+            iconClassName="timeline-logo-badge"
+            icon={<img className="timeline-logo" src={`${process.env.PUBLIC_URL}/logos/timeline/prax.svg`} alt="Prax Industries logo" />}
+          >
+            <h3 className="vertical-timeline-element-title">Prax Industries</h3>
+            <h4 className="vertical-timeline-element-subtitle">Physical AI Systems</h4>
+            <ul>
+              <li>Joined Prax Industries to build and deploy AI systems for physical industries.</li>
+              <li>Working on systems that combine AI agents, specialised models and sensor data with industrial software and equipment to help engineers optimise production and automate operational workflows.</li>
+            </ul>
+          </VerticalTimelineElement>
         </VerticalTimeline>
       </div>
 
