@@ -1,6 +1,36 @@
 $teal: rgba(0, 196, 180, 1);
 $teal-muted: rgba(0, 196, 180, 0.75);
 
+// Official brand marks replace the timeline's generic purple icons.
+.vertical-timeline-element-icon.timeline-logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 196, 180, 0.3);
+
+  &--kubrick { background: #052b23; }
+  &--imperial { background: #0000cd; }
+
+  .timeline-logo {
+    display: block;
+    width: 72%;
+    height: 72%;
+    object-fit: contain;
+
+    &--cambridge {
+      width: 64%;
+      height: 78%;
+    }
+
+    &--full {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 // Strip library box-shadow from cards
 .vertical-timeline-element-content {
   box-shadow: none !important;
